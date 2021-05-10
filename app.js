@@ -1,9 +1,9 @@
 let context;
 let shape = new Object();
-var mons1 = new Object();
-var mons2 = new Object();
-var mons3 = new Object();
-var mons4 = new Object();
+let mons1 = new Object();
+let mons2 = new Object();
+let mons3 = new Object();
+let mons4 = new Object();
 let board;
 let score;
 let pacman_remain;
@@ -23,28 +23,28 @@ let game_time;
 let moster_amount;
 let user_login;
 let pass_login;
-var usernames = ["k"];
-var passwords = ["k"];
+let usernames = ["k"];
+let passwords = ["k"];
 let threeColors = new Array();
-var audio = new Audio("pics/pacmanSong.mp3");
-var movingInterval;
-var i1 = 5;
-var j1 = 5;
-var secBoard = new Array();
-var choice;
-var sum_balls;
-var ateShape = false;
-var inGame = false;
-var playMusic = false;
-var existBalls = false;
-var found_m = false;
-var choice_m;
-var distance;
-var min_distance;
-var movingMon1Interval;
-var movingMon2Interval;
-var movingMon3Interval;
-var movingMon4Interval;
+let audio = new Audio("pics/pacmanSong.mp3");
+let movingInterval;
+let i1 = 5;
+let j1 = 5;
+let secBoard = new Array();
+let choice;
+let sum_balls;
+let ateShape = false;
+let inGame = false;
+let playMusic = false;
+let existBalls = false;
+let found_m = false;
+let choice_m;
+let distance;
+let min_distance;
+let movingMon1Interval;
+let movingMon2Interval;
+let movingMon3Interval;
+let movingMon4Interval;
 let clockImage = new Image();
 let monster = new Image();
 let fiftyPoints = new Image;
@@ -87,13 +87,13 @@ function showAboutDialog() {
 $(document).ready(function() {
 	$('#regForm').submit(function(e) {
 	e.preventDefault();
-	var Fname = $('#Fname').val();
-	var Lname = $('#Lname').val();
-	var username = $('#myUsername').val();
-	var email = $('#email').val();
-	var password = $('#myPassword').val();
-	var birth = $('#start').val();
-	var isValidForm = true;
+	let Fname = $('#Fname').val();
+	let Lname = $('#Lname').val();
+	let username = $('#myUsername').val();
+	let email = $('#email').val();
+	let password = $('#myPassword').val();
+	let birth = $('#start').val();
+	let isValidForm = true;
 
 	$(".error").remove();
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
 		isValidForm = false;
 	} 
 	else {
-		var validName = /^[a-zA-Z]+$/.test(Fname);
+		let validName = /^[a-zA-Z]+$/.test(Fname);
 		if (!validName)
 		{
 			$('#Fname').after('<span class="error"><br>First name can only contain letters</span>');
@@ -118,7 +118,7 @@ $(document).ready(function() {
 		isValidForm = false;
 	} 
 	else {
-		var validName = /^[a-zA-Z]+$/.test(Lname);
+		let validName = /^[a-zA-Z]+$/.test(Lname);
 		if (!validName)
 		{
 			$('#Lname').after('<span class="error"><br>Last name can only contain letters</span>');
@@ -133,8 +133,8 @@ $(document).ready(function() {
 		$('#email').after('<span class="error"><br>This field is required</span>');
 		isValidForm = false;
 	} else {
-		var regEx = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		var validEmail = regEx.test(email);
+		let regEx = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		let validEmail = regEx.test(email);
 		if (!validEmail) {
 			$('#email').after('<span class="error"><br>Enter a valid email</span>');
 			isValidForm = false;
@@ -147,10 +147,10 @@ $(document).ready(function() {
 				$('#myPassword').after('<span class="error"><br>Password must be at least 6 characters long</span>');
 				isValidForm = false;
 			} else {
-				var regexPass1 = /^[a-zA-Z]+$/;
-				var onlyLettersCheck = regexPass1.test(password);
-				var regexPass2 = /^[0-9]+$/;
-				var onlyNumbersCheck = regexPass2.test(password);
+				let regexPass1 = /^[a-zA-Z]+$/;
+				let onlyLettersCheck = regexPass1.test(password);
+				let regexPass2 = /^[0-9]+$/;
+				let onlyNumbersCheck = regexPass2.test(password);
 				if (onlyLettersCheck || onlyNumbersCheck)
 				{
 					$('#myPassword').after('<span class="error"><br>Password must include both numbers and letters</span>');
@@ -318,7 +318,7 @@ function checkIfExist() {
 		alert("Failed to Login. Please fill the fields")
 		return;
 	}
-	for (var i = 0; i < usernames.length; i++) {
+	for (let i = 0; i < usernames.length; i++) {
 		if (user_login == usernames[i] && pass_login == passwords[i]) {
 			scrennUsernameLogin();
 			inGame = false;
