@@ -1,4 +1,4 @@
-# Packman
+# Packman Game
 
 This is a packman game.
 If you want to play, click on the URL below.
