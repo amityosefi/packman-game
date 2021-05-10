@@ -2,7 +2,7 @@
 
 This is a packman game.
 If you want to play, click on the URL below.
-If you dont have a username already, please register.
+For quick login, use default username and password: "k"
 
 # URL
 https://web-development-environments-2021.github.io/Assignment2_208472001_311277438/
